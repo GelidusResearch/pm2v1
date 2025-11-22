@@ -1,4 +1,5 @@
 substitutions:
+  name: "grpm2"
   device_type: "ESP32-C6-H4"
   device_comment: "Power Meter"
   disp_name: "GRPM2"
@@ -137,8 +138,9 @@ packages:
   - !include packages/grpm2.riser5.totals.yaml
 
 esphome:
-  name: pm2
-  #name_add_mac_suffix: true # Used for shipping images
+  name: ${name}
+  friendly_name: ${disp_name}
+  name_add_mac_suffix: true # Used for shipping images
   project:
     name: "GRPM2.Energy_Meter"
     version: "1.0.0"
@@ -166,9 +168,6 @@ ota:
   - platform: esphome
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
   ap:
     password: ""
     ap_timeout: 15s
@@ -176,7 +175,7 @@ wifi:
 captive_portal:
 
 preferences:
-  flash_write_interval: 5m
+  flash_write_interval: 300s
 
 web_server:
   port: 80
