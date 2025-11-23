@@ -1,0 +1,77 @@
+sensor:
+  - id: !extend ${chip_id}
+    phase_a:
+      reactive_power:
+        name: ${disp_name} ${phase_a_ct_name} Reactive Power
+        accuracy_decimals: 2
+        id: ${phase_a_ct_name}Rpwr
+      apparent_power:
+        name: ${disp_name} ${phase_a_ct_name} Apparent Power
+        accuracy_decimals: 2
+        id: ${phase_a_ct_name}Apparent
+      power_factor:
+        name: ${disp_name} ${phase_a_ct_name} Power Factor
+        accuracy_decimals: 2
+        id: ${phase_a_ct_name}Factor
+      harmonic_power:
+        name: ${disp_name} ${phase_a_ct_name} Harmonic Power
+        accuracy_decimals: 2
+        id: ${phase_a_ct_name}Har
+      phase_angle:
+        name: ${disp_name} ${phase_a_ct_name} Phase Angle
+        id: ${phase_a_ct_name}Angle
+        accuracy_decimals: 0
+      peak_current:
+        name: ${disp_name} ${phase_a_ct_name} Peak Amps
+        accuracy_decimals: 2
+        id: ${phase_a_ct_name}Peek
+    phase_b:
+      reactive_power:
+        name: ${disp_name} ${phase_b_ct_name} Reactive Power
+        accuracy_decimals: 2
+        id: ${phase_b_ct_name}Rpwr
+      apparent_power:
+        name: ${disp_name} ${phase_b_ct_name} Apparent Power
+        accuracy_decimals: 2
+        id: ${phase_b_ct_name}Apparent
+      power_factor:
+        name: ${disp_name} ${phase_b_ct_name} Power Factor
+        accuracy_decimals: 2
+        id: ${phase_b_ct_name}Factor
+      harmonic_power:
+        name: ${disp_name} ${phase_b_ct_name} Harmonic Power
+        accuracy_decimals: 2
+        id: ${phase_b_ct_name}Har
+      phase_angle:
+        name: ${disp_name} ${phase_b_ct_name} Phase Angle
+        id: ${phase_b_ct_name}Angle
+        accuracy_decimals: 0
+      peak_current:
+        name: ${disp_name} ${phase_b_ct_name} Peak Amps
+        accuracy_decimals: 2
+        id: ${phase_b_ct_name}Peek
+    phase_c:
+      reactive_power:
+        name: ${disp_name} ${phase_c_ct_name} Reactive Power
+        accuracy_decimals: 2
+        id: ${phase_c_ct_name}Rpwr
+      apparent_power:
+        name: ${disp_name} ${phase_c_ct_name} Apparent Power
+        accuracy_decimals: 2
+        id: ${phase_c_ct_name}Apparent
+      power_factor:
+        name: ${disp_name} ${phase_c_ct_name} Power Factor
+        accuracy_decimals: 2
+        id: ${phase_c_ct_name}Factor
+      harmonic_power:
+        name: ${disp_name} ${phase_c_ct_name} Harmonic Power
+        accuracy_decimals: 2
+        id: ${phase_c_ct_name}Har
+      phase_angle:
+        name: ${disp_name} ${phase_c_ct_name} Phase Angle
+        id: ${phase_c_ct_name}Angle
+        accuracy_decimals: 0
+      peak_current:
+        name: ${disp_name} ${phase_c_ct_name} Peak Amps
+        accuracy_decimals: 2
+        id: ${phase_c_ct_name}Peek

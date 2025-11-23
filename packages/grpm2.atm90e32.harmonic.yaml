@@ -1,0 +1,17 @@
+sensor:
+  - id: !extend ${chip_id}
+    phase_a:
+      harmonic_power:
+        name: ${phase_a_ct_name} Harmonic Power
+        accuracy_decimals: 2
+        id: ${phase_a_ct_name}Har
+    phase_b:
+      harmonic_power:
+        name: ${phase_b_ct_name} Harmonic Power
+        accuracy_decimals: 2
+        id: ${phase_b_ct_name}Har
+    phase_c:
+      harmonic_power:
+        name: ${phase_c_ct_name} Harmonic Power
+        accuracy_decimals: 2
+        id: ${phase_c_ct_name}Har

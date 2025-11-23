@@ -1,0 +1,71 @@
+sensor:
+  - platform: atm90e32
+    cs_pin: ${cs_pin}
+    id: ${chip_id}
+    phase_a:
+      voltage:
+        name: ${disp_name} ${phase_a_line_name} Volts
+        accuracy_decimals: 2
+      current:
+        name: ${disp_name} ${phase_a_ct_name} Amps
+        id: ${phase_a_ct_name}Amps
+        accuracy_decimals: 2
+      power:
+        name: ${disp_name} ${phase_a_ct_name} Watts
+        id: ${phase_a_ct_name}Watts
+        accuracy_decimals: 2
+      gain_voltage: ${phase_a_voltage_cal}
+      gain_ct: ${phase_a_current_cal}
+    phase_b:
+      voltage:
+        name: ${disp_name} ${phase_b_line_name} Volts
+        accuracy_decimals: 2
+      current:
+        name: ${disp_name} ${phase_b_ct_name} Amps
+        id: ${phase_b_ct_name}Amps
+        accuracy_decimals: 2
+      power:
+        name: ${disp_name} ${phase_b_ct_name} Watts
+        id: ${phase_b_ct_name}Watts
+        accuracy_decimals: 2
+      gain_voltage: ${phase_b_voltage_cal}
+      gain_ct: ${phase_b_current_cal}
+    phase_c:
+      voltage:
+        name: ${disp_name} ${phase_c_line_name} Volts
+        accuracy_decimals: 2
+      current:
+        name: ${disp_name} ${phase_c_ct_name} Amps
+        id: ${phase_c_ct_name}Amps
+        accuracy_decimals: 2
+      power:
+        name: ${disp_name} ${phase_c_ct_name} Watts
+        id: ${phase_c_ct_name}Watts
+        accuracy_decimals: 2
+      gain_voltage: ${phase_c_voltage_cal}
+      gain_ct: ${phase_c_current_cal}
+    enable_gain_calibration: ${enable_gain_calibration}
+    enable_offset_calibration: ${enable_offset_calibration}
+    line_frequency: ${line_frequency}
+    gain_pga: ${gain_pga}
+    chip_temperature:
+      name: ${disp_name} ${chip_id} Temperature
+    update_interval: ${update_time}
+
+  - platform: template
+    name: ${disp_name} ${unit_name} Total Amps
+    id: totalAmps${chip_id}
+    lambda: return id(${phase_a_ct_name}Amps).state+id(${phase_b_ct_name}Amps).state+id(${phase_c_ct_name}Amps).state;
+    accuracy_decimals: 2
+    unit_of_measurement: A
+    device_class: current
+    update_interval: ${update_time}    
+    
+  - platform: template
+    name: ${disp_name} ${unit_name} Total Watts
+    id: totalWatts${chip_id}
+    lambda: return id(${phase_a_ct_name}Watts).state+id(${phase_b_ct_name}Watts).state+id(${phase_c_ct_name}Watts).state;
+    accuracy_decimals: 0
+    unit_of_measurement: W
+    device_class: power
+    update_interval: ${update_time}
