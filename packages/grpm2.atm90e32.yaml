@@ -1,6 +1,6 @@
 sensor:
   - platform: atm90e32
-    cs_pin: ${cs_pin}
+    cs_pin: ${spi_cs_pin}
     id: ${chip_id}
     phase_a:
       voltage:
@@ -59,8 +59,8 @@ sensor:
     accuracy_decimals: 2
     unit_of_measurement: A
     device_class: current
-    update_interval: ${update_time}    
-    
+    update_interval: ${update_time}
+
   - platform: template
     name: ${disp_name} ${unit_name} Total Watts
     id: totalWatts${chip_id}
