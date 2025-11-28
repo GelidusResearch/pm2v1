@@ -4,8 +4,8 @@ substitutions:
   device_comment: Power Meter
   disp_name: GRPM2
   update_time: 15s
-  line_frequency: 60Hz # Default
-  gain_pga: 1X # Defualt
+  line_frequency: 60Hz
+  gain_pga: 1X
 
   # SPI CS Pins
   main_spi_cs_pin: GPIO23
@@ -15,6 +15,7 @@ substitutions:
   riser4_spi_cs_pin: GPIO3
   riser5_spi_cs_pin: GPIO10
 
+  # Chip IDs
   main_chip_id: IC1
   riser1_chip_id: IC2
   riser2_chip_id: IC3
@@ -22,15 +23,15 @@ substitutions:
   riser4_chip_id: IC5
   riser5_chip_id: IC6
 
-#********************************************************
-# Default MainBord is always present.
-
+  # MainBoard CT and Line Names
   phase_a_ct_name: CT1
   phase_b_ct_name: CT2
   phase_c_ct_name: CT3
   phase_a_line_name: L1
   phase_b_line_name: L2
   phase_c_line_name: L3
+
+  # MainBoard Calibration Values (adjust these for your installation)
   phase_a_voltage_cal: 4200
   phase_b_voltage_cal: 4200
   phase_c_voltage_cal: 4200
@@ -44,6 +45,11 @@ packages:
   remote_package_files:
     url: https://github.com/gelidusresearch/grpm2
     files:
+
+#********************************************************
+# For advanced configuration options and custom CT grouping examples,
+# see: https://github.com/gelidusresearch/grpm2/blob/main/grpm2.use.example.yaml
+
       - path: packages/grpm2.atm90e32.yaml
         vars:
           chip_id: ${main_chip_id}
@@ -147,11 +153,10 @@ ackages:
 esphome:
   name: ${device_name}
   friendly_name: ${disp_name}
-  name_add_mac_suffix: false
-  min_version: '2025.9.0'
+  name_add_mac_suffix: true
   project:
     name: "Gelidus Research.3 Phase Expandable Power Meter"
-    version: 1.0.0
+    version: "1.0"
 
 dashboard_import:
   package_import_url: github://gelidusresearch/grpm2/grpm2.9c.yaml@main

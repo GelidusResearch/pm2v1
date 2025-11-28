@@ -1,5 +1,5 @@
 substitutions:
-  device_name: grpm2-myhouse
+  device_name: grpm2
   device_type: ESP32-C6-H4
   device_comment: Power Meter
   disp_name: GRPM2
@@ -145,7 +145,7 @@ esphome:
   name_add_mac_suffix: true
   project:
     name: "Gelidus Research.3 Phase Expandable Power Meter"
-    version: 1.0.0
+    version: "1.0"
 
 esp32:
   board: esp32-c6-devkitc-1
