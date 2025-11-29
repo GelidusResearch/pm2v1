@@ -104,6 +104,9 @@ esp32:
       CONFIG_ENABLE_WIFI_STATION: y
       CONFIG_USE_MINIMAL_MDNS: n
 
+# Safe mode configuration is recommended with direct USB serial - boot loop prevention
+safe_mode:
+
 logger:
 
 api:

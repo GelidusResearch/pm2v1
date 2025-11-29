@@ -142,7 +142,6 @@ packages:
 esphome:
   name: ${device_name}
   friendly_name: ${disp_name}
-  name_add_mac_suffix: true
   project:
     name: "Gelidus Research.3 Phase Expandable Power Meter"
     version: "1.0"
@@ -161,6 +160,9 @@ esp32:
       CONFIG_OPENTHREAD_ENABLED: n
       CONFIG_ENABLE_WIFI_STATION: y
       CONFIG_USE_MINIMAL_MDNS: n
+
+# Safe mode configuration is recommended with direct USB serial - boot loop prevention
+safe_mode:
 
 logger:
 
