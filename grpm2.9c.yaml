@@ -89,7 +89,7 @@ packages:
           phase_a_current_cal: 14200
           phase_b_current_cal: 14200
           phase_c_current_cal: 14200
-ackages:
+packages:
   remote_package_files:
     url: https://github.com/gelidusresearch/grpm2
     files:
